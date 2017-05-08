@@ -1,2 +1,0 @@
-# ZAPThalassemia
-ZAPThalassemia Project
