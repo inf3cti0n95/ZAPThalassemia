@@ -37,17 +37,27 @@
                         <!--mega menu start-->
                         <ul class="menuzord-menu pull-right">
                             <li class="<?php if($page == "home")echo "active"; ?>"><a href="index.php">Home</a></li>
-                            <li ><a href="stories.php">Stories</a></li>
+                            <li class="<?php if($page == "story")echo "active"; ?>" ><a href="stories.php">Stories</a></li>
 
 
                             <?php 
+                                $lgn = "";
+                                $sgn="";
+                                $prf="";
+                                if($page == "login")
+                                    $lgn="active";
+                                elseif($page == "signup")
+                                    $sgn = "active";
+                                elseif($page == "profile")
+                                    $prf = "active";
+
                                 if(!$login) 
-                                    echo '<li ><a href="login.php">Login</a></li>
-                                    <li ><a href="signup.php">SignUp</a></li>';
+                                    echo "<li class='$lgn'><a href='login.php'>Login</a></li>
+                                    <li  class='$sgn'><a href='signup.php'>SignUp</a></li>";
                                 else{
                                     echo ' 
 
-                                          <li><a href="#">Hello, '.$name.'</a>
+                                          <li class='.$prf.'><a href="#">Hello, '.$name.'</a>
                                         <ul class="dropdown">
                                           <li ><a href="profile.php">Profile</a></li>
                                           <li ><a href="addstory.php">Add Story</a></li>
