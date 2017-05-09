@@ -32,6 +32,8 @@
         <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <!-- shortcodes -->
         <link href="assets/css/shortcodes/shortcodes.css" rel="stylesheet">
+
+        <link href="assets/css/shortcodes/login.css" rel="stylesheet">
         <!-- Style CSS -->
         <link href="style.css" rel="stylesheet">
 

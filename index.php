@@ -47,7 +47,7 @@
                 </div>
             </div>
 
-        <section id="review" class="section-padding brand-bg">
+        <section id="review" class="brand-bg" style="padding: 10px 0px">
           <div class="container">
 
               <div class="row" style="margin: 0; padding: 0;">
@@ -63,8 +63,8 @@
 
                       <?php
 
-                        for($i=0;$i<5;$i++){
-                          
+                        for($i=0;$i<2;$i++){
+                          $isDoctor = true;
                       $authorUrl = "assets/img/client-thumb/5.png";
                       $tip = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, eos. Velit quo reprehenderit hic voluptatibus recusandae. Placeat aperiam, minima doloremque atque quisquam libero, tenetur omnis culpa. Totam optio, alias laboriosam!";
                       $authorName = "Viraj Trivedi";
