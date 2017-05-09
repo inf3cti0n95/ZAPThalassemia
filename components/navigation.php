@@ -29,14 +29,14 @@
                     <div id="materialize-menu" class="menuzord">
 
                         <!--logo start-->
-                        <a href="index.html" class="logo-brand">
+                        <a href="index.php" class="logo-brand">
                             <img src="assets/img/logo.png" alt=""/>
                         </a>
                         <!--logo end-->
 
                         <!--mega menu start-->
                         <ul class="menuzord-menu pull-right">
-                            <li class="<?php if($page == "home")echo "active"; ?>"><a href="index.html">Home</a></li>
+                            <li class="<?php if($page == "home")echo "active"; ?>"><a href="index.php">Home</a></li>
                             <li ><a href="stories.php">Stories</a></li>
 
 
@@ -56,7 +56,7 @@
                                           if($isDoctor)
                                             echo '<li ><a href="adddata.php">Upload Patient Data</a></li>';
                                           
-                                          echo '<li ><a href="signout.php">Logout</a></li>
+                                          echo '<li ><a href="logout.php">Logout</a></li>
                                         </ul>
                                     </li>
                                     ';

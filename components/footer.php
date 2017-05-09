@@ -11,7 +11,7 @@
                     <div class="row">
                       <div class="col-md-12 text-center">
                           <div class="footer-logo">
-                            <img src="assets/img/logo-white.png" alt="">
+                            <img src="assets/img/logo-white.png" width="320px" alt="">
                           </div>
                       </div><!-- /.col-md-12 -->
                     </div><!-- /.row -->

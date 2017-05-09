@@ -3,21 +3,21 @@
 
 
 <?php 
-  
+  session_start();
   $page = "home";
-  include_once("islogin.php");
+  include_once("components/islogin.php");
 
 ?>
 
 <html lang="en">
     <head>
-        <?php include_once("head.php") ?>
+        <?php include_once("components/head.php") ?>
     </head>
 
 
     <body id="top" class="has-header-search">
 
-       <?php include_once("navigation.php") ?>
+       <?php include_once("components/navigation.php") ?>
         <!-- Hero Section -->
         <section class="banner-wrapper banner-15 fullscreen-banner valign-wrapper">
             <div class="valign-cell">
@@ -37,11 +37,11 @@
         <!-- Hero Section End -->
 
 
-        <div class="full-width promo-box dark-bg">
+        <div class="full-width promo-box dark-bg" style="padding: 40px 10px;">
                 <div class="container">
                     <div class="col-md-12">
                             <h2 class="white-text text-bold text-uppercase mb-30 center">About <span class="brand-color">Thalassaemia</span></h2>
-                            <div class="white-text text-uppercase center">Thalassemias are inherited blood disorders characterized by abnormal hemoglobin production. Symptoms depend on the type and can vary from none to severe. Often there is mild to severe anemia (low red blood cells). Anemia can result in feeling tired and pale skin. There may also be bone problems, an enlarged spleen, yellowish skin, dark urine, and among children slow growth.</div>
+                            <div class="white-text text-uppercase center" style="margin:0px;padding: 0px;">Thalassemias are inherited blood disorders characterized by abnormal hemoglobin production. Symptoms depend on the type and can vary from none to severe. Often there is mild to severe anemia (low red blood cells). Anemia can result in feeling tired and pale skin. There may also be bone problems, an enlarged spleen, yellowish skin, dark urine, and among children slow growth.</div>
                         
                     </div>
                 </div>
@@ -59,58 +59,34 @@
 
                   <div class="thumb-carousel circle-thumb text-center">
                     <ul class="slides">
-                      <li data-thumb="assets/img/client-thumb/5.png">
-                        <div class="icon">
-                            <img src="assets/img/quote-dark.png" alt="Customer Thumb">
-                        </div>
-                        <div class="content white-text">
-                            <p>Quam adipiscing vestibulum feugiat lacus leo a eget leo convallis sagittis nisi varius eros a imperdiet.Dui elementum ut a vestibulum eu fames hendrerit class conubia consequat curae.</p>
+                      
 
-                            <div class="testimonial-meta">
-                                John Doe,
-                                <span class="white-text">User Interface Designer</span> 
+                      <?php
+
+                        for($i=0;$i<5;$i++){
+                          
+                      $authorUrl = "assets/img/client-thumb/5.png";
+                      $tip = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, eos. Velit quo reprehenderit hic voluptatibus recusandae. Placeat aperiam, minima doloremque atque quisquam libero, tenetur omnis culpa. Totam optio, alias laboriosam!";
+                      $authorName = "Viraj Trivedi";
+                      $doctor = $isDoctor ? " , Doctor" : "";
+                        echo "<li data-thumb='$authorUrl'>
+                        <div class='icon'>
+                            <img src='assets/img/quote-dark.png' alt=''>
+                        </div>
+                        <div class='content white-text'>
+                            <p>$tip</p>
+
+                            <div class='testimonial-meta'>
+                                $authorName 
+                                <span class='white-text'>$doctor</span> 
                             </div>
                         </div>
-                      </li>
-                      <li data-thumb="assets/img/client-thumb/2.png">
-                        <div class="icon">
-                            <img src="assets/img/quote-dark.png" alt="Customer Thumb">
-                        </div>
-                        <div class="content white-text">
-                            <p>Quam adipiscing vestibulum feugiat lacus leo a eget leo convallis sagittis nisi varius eros a imperdiet.Dui elementum ut a vestibulum eu fames hendrerit class conubia consequat curae.</p>
-
-                            <div class="testimonial-meta">
-                                Elita Karim,
-                                <span class="white-text">User Interface Designer</span> 
-                            </div>
-                        </div>
-                      </li>
-                      <li data-thumb="assets/img/client-thumb/3.png">
-                        <div class="icon">
-                            <img src="assets/img/quote-dark.png" alt="Customer Thumb">
-                        </div>
-                        <div class="content white-text">
-                            <p>Quam adipiscing vestibulum feugiat lacus leo a eget leo convallis sagittis nisi varius eros a imperdiet.Dui elementum ut a vestibulum eu fames hendrerit class conubia consequat curae.</p>
-
-                            <div class="testimonial-meta">
-                                Tomas Udoya,
-                                <span class="white-text">User Interface Designer</span> 
-                            </div>
-                        </div>
-                      </li>
-                      <li data-thumb="assets/img/client-thumb/4.png">
-                        <div class="icon">
-                            <img src="assets/img/quote-dark.png" alt="Customer Thumb">
-                        </div>
-                        <div class="content white-text">
-                            <p>Quam adipiscing vestibulum feugiat lacus leo a eget leo convallis sagittis nisi varius eros a imperdiet.Dui elementum ut a vestibulum eu fames hendrerit class conubia consequat curae.</p>
-
-                            <div class="testimonial-meta">
-                                Jonathon Bin,
-                                <span class="white-text">User Interface Designer</span> 
-                            </div>
-                        </div>
-                      </li>
+                      </li>";
+                        }
+                      
+                       ?>
+                     
+                      
                     </ul>
                   </div>
 
@@ -135,7 +111,7 @@
 
                 <?php 
                 
-                for($i=0;$i<5;$i++){
+                for($i=0;$i<6;$i++){
                   
                 $imageSrc = "assets/img/blog/blog-5.jpg";
                 $title = "This is title";
@@ -187,11 +163,11 @@
         <!-- Grid News End -->
 
 
-        <?php include_once("footer.php") ?>
+        <?php include_once("components/footer.php") ?>
 
 
 
-        <?php include_once("scripts.php") ?>
+        <?php include_once("components/scripts.php") ?>
 
     </body>
 
