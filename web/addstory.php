@@ -21,7 +21,7 @@
         <style>
 
             a[href$="https://www.froala.com/wysiwyg-editor?k=u"]{
-                display: none;
+                display: none !important;
             }
             label{
                 line-height: 16px;
