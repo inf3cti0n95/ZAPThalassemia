@@ -14,11 +14,15 @@
   }
   $stid = $_GET['story'];
 
+  echo $stid;
+
    $result = mysqli_query($conn,"SELECT story_table.st_title,story_table.st_date, story_table.st_content, story_table.st_id,story_table.st_heroimg,user_table.u_avatar,user_table.u_fname,user_table.u_lname,user_table.u_id 
     FROM story_table
     INNER JOIN user_table ON user_table.u_id=story_table.u_id_fk AND st_id=$stid;");
 
     $story = mysqli_fetch_assoc($result);
+
+    print_r($story);
 
     // if(!isset($story)){
     //     header('Location: stories.php');
