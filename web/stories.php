@@ -94,6 +94,8 @@
                                     <p>$storyExerpt</p>
                                 </div><!-- .entry-content -->
 
+                                <a href='$storyUrl' class='btn btn-lg blue mt-20 waves-effect waves-light mr-20'>Read More</a>
+
                                 </article><!-- /.post-wrapper -->
 
                                     ";
