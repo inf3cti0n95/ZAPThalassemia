@@ -228,9 +228,7 @@
             <div class="modal-content">
             <h4>Registered Successfully</h4>
             <p>Congratulations! You have been registered to ZAP Thalassemia</p>
-            </div>
-            <div class="modal-footer">
-            <a href="index.php" class="modal-action modal-close waves-effect waves-green btn-flat">Okay</a>
+            <a href="index.php" onclick="$('#modal1').close();" class="modal-action modal-close waves-effect waves-green btn-flat">Okay</a>
             </div>
         </div>
 
