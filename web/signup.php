@@ -335,7 +335,7 @@
                 //     formData.append(form3Data[i].name, form3Data[i].value);
 
                 var request = new XMLHttpRequest();
-                request.open("POST", "http://localhost/ZapThalassemia/components/processsignup.php");
+                request.open("POST", "/components/processsignup.php");
                 request.send(formData);
                 request.addEventListener("load", reqListener);
                 function reqListener () {
