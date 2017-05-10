@@ -124,23 +124,21 @@
 
                             </article><!-- /.post-wrapper -->
 
-                            <nav class="single-post-navigation" role="navigation">
+                            <!--<nav class="single-post-navigation" role="navigation">
                             <div class="row">
-                                <!-- Previous Post -->
                                 <div class="col-xs-6">
                                 <div class="previous-post-link">
                                     <a class="waves-effect waves-light" href="<?php echo "story.php?story=".$story["st_id"]-10; ?>"><i class="fa fa-long-arrow-left"></i>Read Previous Post</a>
                                 </div>
                                 </div>
 
-                                <!-- Next Post -->
                                 <div class="col-xs-6">
                                 <div class="next-post-link">
                                     <a class="waves-effect waves-light" href="<?php echo "story.php?story=".$story["st_id"]+10; ?>">Read Next Post<i class="fa fa-long-arrow-right"></i></a>
                                 </div>
                                 </div>
-                            </div> <!-- .row -->
-                            </nav>
+                            </div> 
+                            </nav>-->
 
                             <div class="comments-wrapper">
                             <div class="comments-tab">
