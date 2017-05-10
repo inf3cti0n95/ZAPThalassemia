@@ -6,7 +6,7 @@ $username = $url["user"];
 $password = $url["pass"];
 $db = substr($url["path"], 1);
 
-$conn = mysqli_connect($servername,$username,"",$dbname);
+$conn = mysqli_connect($server,$username,$password,$db);
 
 
 if(!$conn)
