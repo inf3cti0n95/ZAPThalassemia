@@ -45,7 +45,7 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
 }
 // Check if $uploadOk is set to 0 by an error
 
-    $filename = $target_dir . uniqid().$mime; 
+    $filename = $target_dir . uniqid().".".$imageFileType; 
 
 if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.";
