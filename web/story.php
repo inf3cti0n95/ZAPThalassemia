@@ -1,9 +1,29 @@
 <!DOCTYPE html>
 <?php 
+    include_once('components/connection.php');
+?>
+
+<?php 
   
   $page = "story";
   session_start();
   include_once("components/islogin.php");
+
+  if(!isset($_REQUEST['story'])){
+      header('Location: stories.php');
+  }
+  $stid = $_REQUEST['story'];
+
+   $result = mysqli_query($conn,"SELECT story_table.st_title,story_table.st_date, story_table.st_content, story_table.st_id,story_table.st_heroimg,user_table.u_avatar,user_table.u_fname,user_table.u_lname,user_table.u_id 
+    FROM story_table
+    INNER JOIN user_table ON user_table.u_id=story_table.u_id_fk AND st_id=$stid;");
+
+    $story = mysqli_fetch_assoc($result);
+
+    if(!isset($story)){
+              header('Location: stories.php');
+
+    }
 
 ?>
 <html lang="en">
@@ -21,7 +41,8 @@
                         <h2>Stories</h2>
                         <ol class="breadcrumb">
                             <li><a href="index.php">Home</a></li>
-                            <li class="active"><a href="#">Stories</a></li>
+                            <li ><a href="#">Stories</a></li>
+                            <li class="active"><a href="#"><?php echo $story["st_title"]; ?></a></li>
                         </ol>
                     </div>
                 </div>
@@ -44,25 +65,25 @@
                                 </div>
                                 
                                 <div class="entry-header">
-                                <h2 class="entry-title">CTC to showcase technology solutions at Sea Air Space Exposition</h2>
+                                <h2 class="entry-title"><?php echo $story["st_title"]; ?></h2>
 
                                 <div class="entry-meta">
                                     <ul class="list-inline">
                                         <li>
-                                            <i class="fa fa-user"></i><a href="#">Trendy Theme</a>
+                                            <i class="fa fa-user"></i><a href="<?php echo "user.php?user=".$story["u_id"]; ?>"><?php echo $story["u_fname"]." ".$story['u_lname']; ?></a>
                                         </li>
 
                                         <li>
-                                            <i class="fa fa-clock-o"></i><a href="#">Jan 15, 2016</a>
+                                            <i class="fa fa-clock-o"></i><a href="#"><?php echo $story["st_date"]; ?></a>
                                         </li>
 
-                                        <li>
+                                        <!--<li>
                                             <i class="fa fa-heart-o"></i><a href="#"><span>1</span></a>
                                         </li>
 
                                         <li>
                                             <i class="fa fa-comment-o"></i><a href="#">3</a>
-                                        </li>
+                                        </li>-->
                                     </ul>
                                 </div><!-- .entry-meta -->
                                 </div>
@@ -70,32 +91,30 @@
                             </header><!-- /.entry-header-wrapper -->
 
                             <div class="thumb-wrapper">
-                                <img src="assets/img/blog/blog-1.jpg" class="img-responsive" alt="" >
+                                <img src="<?php echo $story["st_heroimage"]; ?>" class="img-responsive" alt="" >
                             </div><!-- .post-thumb -->
 
 
                             <div class="entry-content">
-                                <p>Maecenas varius finibus orci vel dignissim. Nam posuere, magna pellentesque accumsan tincidunt, libero lorem convallis lectus, tincidunt accumsan enim ex ut sem. Ut in augue congue, tempus urna sit amet, condimentum lorem. Pellentesque est sem, semper sit amet velit et, commodo fringilla turpis. Aenean quam erat, eleifend quis congue vitae, interdum vitae risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed viverra nulla.</p>
-
-                                <p>Maecenas congue risus enim, a bibendum erat sodales non. Aliquam sodales nunc id nisi scelerisque, eu semper neque condimentum. Suspendisse at purus eget velit volutpat consequat. Sed sodales, enim a pretium euismod, dui nunc venenatis enim, a hendrerit diam mauris sed ligula. Integer malesuada velit velit, et rhoncus velit finibus eu. Nam faucibus nulla lectus, eu laoreet mi rhoncus sed. Suspendisse iaculis mollis faucibus. Phasellus nisi ex, lacinia ac velit eget, congue ultrices ante. Vestibulum a ex dui. Etiam eget ex sodales, semper urna et, faucibus nisi. Etiam vehicula, elit in efficitur pretium, quam quam pellentesque tellus, vel laoreet erat leo id tortor. Morbi lobortis erat non ipsum hendrerit, non venenatis erat tempus. Nunc laoreet malesuada dolor, nec iaculis mi suscipit hendrerit. Aliquam arcu magna.</p>
+                                <?php echo $story["st_content"]; ?>
                             </div><!-- .entry-content -->
 
 
                             <footer class="entry-footer">
-                                <div class="post-tags">
+                                <!--<div class="post-tags">
                                 <span class="tags-links">
                                     <i class="fa fa-tags"></i><a href="#">Technology,</a> <a href="#" rel="tag">material design</a>
                                 </span>
-                                </div> <!-- .post-tags -->
+                                </div>  .post-tags -->
 
-                                <ul class="list-inline right share-post">
+                                <!--<ul class="list-inline right share-post">
                                     <li><a href="#"><i class="fa fa-facebook"></i> <span>Share</span></a>
                                     </li>
                                     <li><a href="#"><i class="fa fa-twitter"></i> <span>Tweet</span></a>
                                     </li>
                                     <li><a href="#"><i class="fa fa-google-plus"></i> <span>Plus</span></a>
                                     </li>
-                                </ul>
+                                </ul>-->
                             </footer>
 
                             </article><!-- /.post-wrapper -->
@@ -105,14 +124,14 @@
                                 <!-- Previous Post -->
                                 <div class="col-xs-6">
                                 <div class="previous-post-link">
-                                    <a class="waves-effect waves-light" href="#"><i class="fa fa-long-arrow-left"></i>Read Previous Post</a>
+                                    <a class="waves-effect waves-light" href="<?php echo "story.php?story=".$story["st_id"]-10; ?>"><i class="fa fa-long-arrow-left"></i>Read Previous Post</a>
                                 </div>
                                 </div>
 
                                 <!-- Next Post -->
                                 <div class="col-xs-6">
                                 <div class="next-post-link">
-                                    <a class="waves-effect waves-light" href="#">Read Next Post<i class="fa fa-long-arrow-right"></i></a>
+                                    <a class="waves-effect waves-light" href="<?php echo "story.php?story=".$story["st_id"]+10; ?>">Read Next Post<i class="fa fa-long-arrow-right"></i></a>
                                 </div>
                                 </div>
                             </div> <!-- .row -->
