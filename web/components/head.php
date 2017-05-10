@@ -1,9 +1,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="materialize is a material design based mutipurpose responsive template">
-        <meta name="keywords" content="material design, card style, material template, portfolio, corporate, business, creative, agency">
-        <meta name="author" content="trendytheme.net">
+        
 
         <title>ZAP Thalassaemia</title>
 
