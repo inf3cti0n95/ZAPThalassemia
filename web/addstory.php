@@ -4,7 +4,7 @@
   $page = "profile";
   session_start();
   include_once("components/islogin.php");
-  $userid = 1;
+  $userid = 13;
 
 
 ?>
