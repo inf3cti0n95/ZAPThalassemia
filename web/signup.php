@@ -239,6 +239,13 @@
 
         <script>
 
+           $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+  });
+      
+
+
             $('.utype').click(function(e){
           if(this.value === "doctor"){
             $("#docreg").show();
@@ -266,6 +273,7 @@
                form1Data = new FormData(this);
 
                 $("#form1sec").hide();
+                $(window).scrollTop(0);
                 $("#form2sec").show();
             });
 
@@ -283,6 +291,7 @@
                form2Data = new FormData(this);
  
                 $("#form2sec").hide();
+                $(window).scrollTop(0);
                 $("#form3sec").show();
             });
         
@@ -342,10 +351,10 @@
   console.log(this.responseText);
                 
                 
-                if(this.responseText.trim() === "Entered"){
-                    $("#modal1").show();
+                  if(this.responseText.trim() === "Entered"){
+                      $('#modal1').modal('open');
+                  }
                 }
-}
 
 
             });
