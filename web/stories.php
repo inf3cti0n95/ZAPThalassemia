@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <?php 
+    include_once('components/connection.php');
+?>
+
+<?php 
   
   $page = "story";
   session_start();
   include_once("components/islogin.php");
+
+  
 
 ?>
 <html lang="en">
