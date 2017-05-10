@@ -54,10 +54,16 @@
                         
                             while ($row = mysqli_fetch_assoc($result)) {
 
+                                if($row["u_avatar"] == ""){
+                                    $avatar = "assets/img/client-thumb/5.png";
+                                }else{
+                                    $avatar = $row["u_avatar"];
+                                }
+
                                 $storyThumb = $row["st_heroimg"];
                                 $storyTitle = $row["st_title"];
                                 $storyUrl = "story.php?story=".$row["st_id"];
-                                $authorImg = $row["u_avatar"];
+                                $authorImg = $avatar;
                                 $authorUrl = "user.php?user=".$row["u_id"];
                                 $storyExerpt = substr(strip_tags($row["st_content"]),30)."...";
                                     echo "
@@ -66,7 +72,7 @@
                                 <article class='post-wrapper'>
 
                                 <div class='thumb-wrapper'>
-                                    <img src='$storyThumb' class='img-responsive' alt='' >
+                                    <img src='$storyThumb' class='img-responsive blue' alt='' >
 
                                     <div class='entry-header'>
                                     
