@@ -11,7 +11,7 @@
     INNER JOIN user_table ON user_table.u_id=story_table.u_id_fk;");
 
     while($row=mysqli_fetch_assoc($result)){
-            print_r($row)
+            print_r($row);
 
     }
 
