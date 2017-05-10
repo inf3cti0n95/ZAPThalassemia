@@ -4,6 +4,10 @@
 
 <?php
  
+ function makeDir($path)
+{
+     return is_dir($path) || mkdir($path);
+}
  
     $content = $_REQUEST['content'];
     $hero = $_FILES['heroimg'];
@@ -11,7 +15,9 @@
     $title = $_REQUEST['title'];
     $mime  = "";
 
+    makeDir("uploads");
     $target_dir = "uploads/";
+
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
