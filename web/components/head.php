@@ -5,7 +5,7 @@
         <meta name="keywords" content="material design, card style, material template, portfolio, corporate, business, creative, agency">
         <meta name="author" content="trendytheme.net">
 
-        <title>materialize App Landing</title>
+        <title>ZAP Thalassaemia</title>
 
         <!--  favicon -->
         <link rel="shortcut icon" href="assets/img/ico/favicon.png">
