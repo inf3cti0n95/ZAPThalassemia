@@ -13,8 +13,4 @@ if(!$conn)
 	{
 		die("Connection failed");
 	}
-	else
-	{
-		echo "Yay";
-	}
 ?>
