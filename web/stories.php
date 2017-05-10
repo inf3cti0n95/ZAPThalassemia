@@ -72,7 +72,7 @@
                                 <article class='post-wrapper'>
 
                                 <div class='thumb-wrapper'>
-                                    <img src='$storyThumb' class='img-responsive blue'  style='min-height:250px;' alt='' >
+                                    <img src='$storyThumb' class='img-responsive blue'  style='min-height:250px; max-height:350px;' alt='' >
 
                                     <div class='entry-header'>
                                     
