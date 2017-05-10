@@ -11,6 +11,13 @@
 <html lang="en">
     <head>
         <?php include_once("components/head.php") ?>
+        <style>
+        
+          .modal-backdrop{
+            opacity: 0;
+          }
+
+        </style>
     </head>
     <body id="top" class="has-header-search">
         
@@ -224,13 +231,13 @@
           </div>
         </section>
 
-        <div id="modal1" style="display:none;" class="modal">
+        <!--<div id="modal1" style="display:none;" class="modal">
             <div class="modal-content">
             <h4>Registered Successfully</h4>
             <p>Congratulations! You have been registered to ZAP Thalassemia</p>
             <a href="index.php" onclick="$('#modal1').close();" class="modal-action modal-close waves-effect waves-green btn-flat">Okay</a>
             </div>
-        </div>
+        </div>-->
 
         <?php include_once("components/footer.php") ?>
         <?php include_once("components/scripts.php") ?>
@@ -239,7 +246,7 @@
 
            $(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-    $('.modal').modal();
+    // $('.modal').modal();
   });
       
 
@@ -350,7 +357,8 @@
                 
                 
                   if(this.responseText.trim() === "Entered"){
-                      $('#modal1').modal('open');
+                      alert("Registered Successfully");
+                      window.location.href = "/";
                   }
                 }
 
