@@ -5,9 +5,9 @@
 <?php 
 
 
+$data = implode($_REQUEST);
   
-        mysqli_query($conn,"INSERT INTO user(fname) 
-		VALUES ('$data')");
+        mysqli_query($conn,"INSERT INTO user(fname) VALUES ('$data')");
 		echo "Entered";
 	
    
