@@ -20,7 +20,7 @@
 
         <style>
 
-            a[href*=https://www.froala.com/wysiwyg-editor?k=u]{
+            a[href$="https://www.froala.com/wysiwyg-editor?k=u"]{
                 display: none;
             }
             label{
