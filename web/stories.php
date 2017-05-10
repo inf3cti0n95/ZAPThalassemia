@@ -15,7 +15,6 @@
 
     
 
-while ($row = mysqli_fetch_assoc($result)) {
 
     print_r($row);
     }
@@ -54,15 +53,14 @@ while ($row = mysqli_fetch_assoc($result)) {
 
                         <?php
                         
-                            for($i = 0; $i < 5 ; $i++){
+                            while ($row = mysqli_fetch_assoc($result)) {
 
-                                $storyThumb = "assets/img/blog/blog-1.jpg";
-                                $storyTitle = "CTC to showcase technology solutions at Sea Air Space Exposition";
-                                $storyUrl = "#";
-                                $authorImg = "assets/img/blog/author.jpg";
-                                $authorUrl = "#";
-                                $totalComments = 25;
-                                $storyExerpt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.";
+                                $storyThumb = $row["st_heroimg"];
+                                $storyTitle = $row["st_title"];
+                                $storyUrl = "story.php?story=".$row["st_id"];
+                                $authorImg = $row["u_avatar"];
+                                $authorUrl = "user.php?user=".$row["u_id"];
+                                $storyExerpt = substr(strip_tags($row["st_content"]),30)."...";
                                     echo "
                                     
                                         
@@ -82,9 +80,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                                     <a href='$authorUrl'><img src='$authorImg' alt=''></a>                
                                     </div>
 
-                                    <span class='post-comments-number'>
-                                    <i class='fa fa-comments'></i><a href='$storyUrl#comments'>$totalComments</a>
-                                    </span>
+                                    
 
                                 </div><!-- .post-thumb -->
 
