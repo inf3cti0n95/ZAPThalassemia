@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 
-
+<?php 
+    include_once('components/connection.php');
+?>
 
 <?php 
   session_start();
   $page = "home";
   include_once("components/islogin.php");
+
+    $stories = mysqli_query($conn,"SELECT story_table.st_title, story_table.st_content, story_table.st_id,story_table.st_heroimg,user_table.u_avatar,user_table.u_fname,user_table.u_lname,user_table.u_id 
+    FROM story_table
+    INNER JOIN user_table ON user_table.u_id=story_table.u_id_fk;");
+
+    
+    $tips = mysqli_query($conn,"SELECT tip_table.tip_content,user_table.u_avatar,user_table.u_fname,user_table.u_lname,user_table.u_id 
+    FROM tip_table
+    INNER JOIN user_table ON user_table.u_id=tip_table.u_id_fk;");
+
+    $t = mysqli_fetch_assoc($tips);
+    $s = mysqli_fetch_assoc($stories);
+
+
 
 ?>
 
