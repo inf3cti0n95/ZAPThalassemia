@@ -142,7 +142,7 @@
                         </div>
                         <div style="margin:10px 60px 60px 60px;" class="input-container">
     
-                          <input type="text" id="caste" name="caste" checked required="required" autocomplete="off" />
+                          <input type="text" id="caste" name="caste" checked autocomplete="off" />
                             <label style="font-size: 16px; font-weight: 400;" for="caste">Caste</label>
                           <div class="bar"></div>
                         </div>
