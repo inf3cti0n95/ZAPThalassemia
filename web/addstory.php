@@ -35,8 +35,8 @@
     <body id="top" class="has-header-search">
         <?php include_once("components/navigation.php") ?>
 
-        <section class="page-title ptb-50" style="padding: 50px 0; top:100px;">
-            <div class="container">
+<section class="page-title ptb-110">
+                <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <h2>Publish Story</h2>
@@ -58,6 +58,8 @@
                     <label for="title" style="font-size: 16px;">Story Title</label>
                     <input name="title" type="text" id="title" >
 
+
+                    <label for="heroimg" style="font-size: 16px;">Main Image</label>
                     <div class="file-field input-field">
                     <div class="btn">
                         <input name="fileToUpload" type="file" id="heroimg">

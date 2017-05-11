@@ -28,8 +28,7 @@
         <?php include_once("components/navigation.php") ?>
 
          <!--page title start-->
-        <section class="page-title ptb-50" style="padding: 50px 0; top:100px;">
-            <div class="container">
+<section class="page-title ptb-110">            <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <h2>Stories</h2>

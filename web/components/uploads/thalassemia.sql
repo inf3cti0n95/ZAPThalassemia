@@ -55,7 +55,7 @@ CREATE TABLE `med_data` (
 --
 
 INSERT INTO `med_data` (`md_id`, `u_id_fk`, `md_gender`, `md_nationality`, `md_religion`, `md_caste`, `md_bloodgrp`, `md_thstatus`) VALUES
-(3, 13, 'male', 'indian', 'hinduism', 'xyz', 'A+', 'major');
+(1, 1, 'male', 'indian', 'hinduism', 'xyz', 'A+', 'major');
 
 -- --------------------------------------------------------
 
@@ -124,7 +124,7 @@ CREATE TABLE `user_table` (
 --
 
 INSERT INTO `user_table` (`u_id`, `u_fname`, `u_lname`, `u_email`, `u_phno`, `u_type_fk`, `u_doc_regid`, `u_pwd`, `u_bdate`) VALUES
-(13, 'viraj', 'trivedi', 'a@b.com', 990909090, 1, '', 'abc', '2000-12-00');
+(1, 'viraj', 'trivedi', 'a@b.com', 990909090, 1, '', 'abc', '2000-12-00');
 
 --
 -- Indexes for dumped tables
@@ -179,7 +179,7 @@ ALTER TABLE `comment_table`
 -- AUTO_INCREMENT for table `med_data`
 --
 ALTER TABLE `med_data`
-  MODIFY `md_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `md_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `story_table`
 --
@@ -194,12 +194,12 @@ ALTER TABLE `tip_table`
 -- AUTO_INCREMENT for table `usertype_table`
 --
 ALTER TABLE `usertype_table`
-  MODIFY `ut_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ut_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `user_table`
 --
 ALTER TABLE `user_table`
-  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
