@@ -56,7 +56,7 @@
             <form class="ptb-50" action="" method="post" enctype="multipart/form-data" >  
 
                    
-                    <input type="hidden" name="user" value="<?php echo $userid?>">
+                    <input type="hidden" name="user" id="uid" value="<?php echo $userid?>">
 
                     <textarea name="content" id="froala-editor">Initialize the Froala WYSIWYG HTML Editor on a textarea.</textarea>
                     <button type="submit"  class="btn btn-lg blue mt-20 waves-effect waves-light mr-20">Publish Tip</button>
@@ -83,16 +83,11 @@
             });
 
             $('form').submit(function(e){
-                e.preventDefault();
-
-                let content = $("textarea").val();
-                let userid  = <?php echo $userid?>;
-                let title = $('#title').val();
-                let heroimg  = $('#heroimg').val();
-                
+                e.preventDefault();               
 
                 let formData = new FormData(this);
-                console.log(heroimg)
+                console.log($("#froala-editor").val());
+                console.log($("#uid").val());
 
 
                  var request = new XMLHttpRequest();
