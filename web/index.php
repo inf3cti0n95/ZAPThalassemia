@@ -21,7 +21,8 @@
     $t = mysqli_fetch_assoc($tips);
     $s = mysqli_fetch_assoc($stories);
 
-
+    print_r($t);
+    print_r($s);
 
 ?>
 
