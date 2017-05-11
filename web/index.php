@@ -83,7 +83,7 @@
                           if($t['u_type_fk'] == 2){
                             $isDoctor = true;
                           }
-                          $avatar = "";
+                          $avatar = "assets/img/client-thumb/5.png";
                           if(isset($t['u_avatar']) && $t['u_avatar'] != ""){
                             $avatar = $t['u_avatar'];
                           }
