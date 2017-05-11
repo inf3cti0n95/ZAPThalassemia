@@ -4,6 +4,10 @@
   $page = "profile";
   session_start();
   include_once("components/islogin.php");
+  if($login && $isDoctor){
+    header('Location: login.php');
+  }
+
 
 ?>
 <html lang="en">
