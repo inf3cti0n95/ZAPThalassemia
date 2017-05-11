@@ -99,7 +99,7 @@
                         <div class='content white-text'>
                             <p>$tip</p>
 
-                            <div class='testimonial-meta'>
+                            <div style='text-transform: capitalize;' class='testimonial-meta'>
                                 $authorName 
                                 <span class='white-text'>$doctor</span> 
                             </div>

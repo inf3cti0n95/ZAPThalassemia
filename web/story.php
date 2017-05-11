@@ -74,7 +74,7 @@
                                 <div class="entry-meta">
                                     <ul class="list-inline">
                                         <li>
-                                            <i class="fa fa-user"></i><a href="<?php echo "user.php?user=".$story["u_id"]; ?>"><?php echo $story["u_fname"]." ".$story['u_lname']; ?></a>
+                                            <i class="fa fa-user"></i><a style='text-transform: capitalize;' href="<?php echo "user.php?user=".$story["u_id"]; ?>"><?php echo $story["u_fname"]." ".$story['u_lname']; ?></a>
                                         </li>
 
                                         <li>
