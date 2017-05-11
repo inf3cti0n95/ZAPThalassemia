@@ -13,7 +13,7 @@
       $password = $_REQUEST['password'];
 
       $result = mysqli_query($conn,"SELECT * FROM user_table where u_email=$username");
-      echo "SELECT * FROM user_table where u_email=$username";
+      echo "SELECT * FROM user_table where u_email='$username'";
 
       $r =  mysqli_fetch_assoc($result);
       echo $r['u_email'] . $r['u_pwd'] . $username . $password;
