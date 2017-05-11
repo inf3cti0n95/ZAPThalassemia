@@ -89,7 +89,7 @@
                                 </div><!-- .post-thumb -->
 
 
-                                <div class='entry-content'>
+                                <div style='overflow: hidden;' class='entry-content'>
                                     <p>$storyExerpt</p>
                                 </div><!-- .entry-content -->
 
