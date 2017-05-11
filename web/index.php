@@ -150,7 +150,7 @@
                 $storyExerpt = substr(strip_tags($row["st_content"]),30)."...";
 
                   echo "<div class='col-md-4'>
-                    <article class='post-wrapper'>
+                    <article class='post-wrapper' style='height: 335px;'>
 
                       <div class='thumb-wrapper'>
                         <img style='min-height:200px; max-height:200px;' src='$imageSrc' class='img-responsive blue' alt='' >
