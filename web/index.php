@@ -78,7 +78,6 @@
                       <?php
 
                         while($t = mysqli_fetch_assoc($tips)){
-                          echo "Hello";
                           $isDoctor = false;
                           if($t['u_type_fk'] == 2){
                             $isDoctor = true;
