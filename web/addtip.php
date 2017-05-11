@@ -4,7 +4,9 @@
   $page = "profile";
   session_start();
   include_once("components/islogin.php");
-  $userid = 13;
+  if(!$login){
+    header('Location: login.php');
+  }
 
    
 
