@@ -13,6 +13,7 @@
     $hero = $_FILES['heroimg'];
     $userid = $_REQUEST['user'];
     $title = $_REQUEST['title'];
+    $date = date('Y-m-d H:i:s');
     $mime  = "";
 
     makeDir("uploads");
@@ -66,7 +67,7 @@ if ($uploadOk == 0) {
 
 
 
-    mysqli_query($conn,"INSERT INTO story_table(u_id_fk,st_title,st_content,st_heroimg) VALUES ($userid,'$title','$content','https://zapthalassaemia.herokuapp.com/components/$filename')");
+    mysqli_query($conn,"INSERT INTO story_table(u_id_fk,st_title,st_content,st_heroimg,st_date) VALUES ($userid,'$title','$content','https://zapthalassaemia.herokuapp.com/components/$filename','$date')");
     echo "Entered";
 	
  
