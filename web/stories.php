@@ -11,7 +11,7 @@
 
    $result = mysqli_query($conn,"SELECT story_table.st_title, story_table.st_content, story_table.st_id,story_table.st_heroimg,user_table.u_avatar,user_table.u_fname,user_table.u_lname,user_table.u_id 
     FROM story_table
-    INNER JOIN user_table ON user_table.u_id=story_table.u_id_fk;");
+    INNER JOIN user_table ON user_table.u_id=story_table.u_id_fk ORDER BY story_table.st_id DESC;");
 
     
 
