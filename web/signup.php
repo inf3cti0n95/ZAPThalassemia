@@ -4,9 +4,9 @@
   $page = "login";
   include_once("components/islogin.php");
 
-  
-
-
+  if($login){
+    header('Location: index.php');
+  }
 ?>
 <html lang="en">
     <head>

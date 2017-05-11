@@ -8,7 +8,6 @@
   session_start();
   $page = "home";
   include_once("components/islogin.php");
-  print_r($_SESSION);
 
     $stories = mysqli_query($conn,"SELECT story_table.st_title, story_table.st_content, story_table.st_id,story_table.st_heroimg,user_table.u_avatar,user_table.u_fname,user_table.u_lname,user_table.u_id 
     FROM story_table

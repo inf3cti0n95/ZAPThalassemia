@@ -6,18 +6,18 @@
   session_start();
   $page = "login";
   include_once("components/islogin.php");
-
+  if($login){
+    header('Location: index.php');
+  }
   if(isset( $_REQUEST['username']) &&  $_REQUEST['username']!= ""){
 
       $username = $_REQUEST['username'];
       $password = $_REQUEST['password'];
 
       $result = mysqli_query($conn,"SELECT * FROM user_table where u_email='$username';");
-      echo "SELECT * FROM user_table where u_email='$username';";
 
       $r =  mysqli_fetch_assoc($result);
-      echo $r['u_email'] . $r['u_pwd'] . $username . $password;
-      print_r($r);
+      
       if($username == $r['u_email'] && $password == $r['u_pwd']){
         $_SESSION['user'] = true;
         $_SESSION['userid'] = $r['u_id'];
@@ -26,10 +26,10 @@
         $_SESSION['user_isdoctor'] = $r['u_type_fk']==2 ? true : false;
         $_SESSION['user_fname'] = $r['u_fname'];
         $_SESSION['user_lname'] = $r['u_lname'];
-        $_SESSION['user_name'] = $r['u_lname']." ".$r['u_lname'];
+        $_SESSION['user_name'] = $r['u_fname']." ".$r['u_lname'];
         
       }
-      // header('Location: index.php');
+      header('Location: index.php');
   }
 
 
