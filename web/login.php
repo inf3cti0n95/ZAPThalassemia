@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <?php 
+    include_once('components/connection.php');
+?>
+<?php 
   session_start();
   $page = "login";
   include_once("components/islogin.php");
 
   if(isset( $_REQUEST['username']) &&  $_REQUEST['username']!= ""){
 
-      $_SESSION['user']["fname"] = "Viraj";
-      $_SESSION['user']["lname"] = "Viraj";
-      $_SESSION['user']["id"] = "Viraj";
+      $username = $_REQUEST['username'];
+      $password = $_REQUEST['password'];
 
+      $result = mysqli_query($conn,"SELECT * FROM user_table where u_email=$username");
+
+      $r =  mysqli_fetch_assoc($result);
+
+      if($username == $r['u_email'] && $password == $r['u_pwd']){
+        $_SESSION['user'] = true;
+        $_SESSION['userid'] = $r['u_id'];
+        $_SESSION['user_email'] = $r['u_email'];
+        $_SESSION['user_avatar'] = $r['u_avatar'];
+        $_SESSION['user_isdoctor'] = $r['u_type_fk']==2 ? true : false;
+        $_SESSION['user_fname'] = $r['u_fname'];
+        $_SESSION['user_lname'] = $r['u_lname'];
+        $_SESSION['user_name'] = $r['u_lname']." ".$r['u_lname'];
+        
+      }
       header('Location: index.php');
   }
 
@@ -35,7 +52,7 @@
                       <form action="<?=($_SERVER['PHP_SELF'])?>" method="post">
                         <div class="input-container">
                           <input type="text" name="username" required="required" autocomplete="off" />
-                          <label for="username">Username</label>
+                          <label for="username">Email</label>
                           <div class="bar"></div>
                         </div>
                         <div class="input-container">
