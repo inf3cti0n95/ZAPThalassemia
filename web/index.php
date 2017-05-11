@@ -14,14 +14,13 @@
     INNER JOIN user_table ON user_table.u_id=story_table.u_id_fk;");
 
     
-    $tips = mysqli_query($conn,"SELECT tip_table.tip_content,user_table.u_avatar,user_table.u_fname,user_table.u_lname,user_table.u_id 
+    $tips = mysqli_query($conn,"SELECT tip_table.tip_content,user.u_type_fk,user_table.u_avatar,user_table.u_fname,user_table.u_lname,user_table.u_id 
     FROM tip_table
     INNER JOIN user_table ON user_table.u_id=tip_table.u_id_fk;");
 
-    $t = mysqli_fetch_assoc($tips);
+    
     $s = mysqli_fetch_assoc($stories);
 
-    print_r($t);
     print_r($s);
 
 ?>
@@ -80,11 +79,18 @@
 
                       <?php
 
-                        for($i=0;$i<2;$i++){
-                          $isDoctor = true;
-                      $authorUrl = "assets/img/client-thumb/5.png";
-                      $tip = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, eos. Velit quo reprehenderit hic voluptatibus recusandae. Placeat aperiam, minima doloremque atque quisquam libero, tenetur omnis culpa. Totam optio, alias laboriosam!";
-                      $authorName = "Viraj Trivedi";
+                        while($t = mysqli_fetch_assoc($tips)){
+                          $isDoctor = false;
+                          if($t['u_type_fk'] == 2){
+                            $isDoctor = true;
+                          }
+                          $avatar = "";
+                          if(isset($t['u_avatar']) && $t['u_avatar'] != ""){
+                            $avatar = $t['u_avatar'];
+                          }
+                      $authorUrl = $avatar;
+                      $tip = $t['tip_content'];
+                      $authorName = $t['u_fname']." ".$t['u_lname'];
                       $doctor = $isDoctor ? " , Doctor" : "";
                         echo "<li data-thumb='$authorUrl'>
                         <div class='icon'>
