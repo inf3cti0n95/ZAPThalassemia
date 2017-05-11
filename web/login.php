@@ -29,7 +29,7 @@
         $_SESSION['user_name'] = $r['u_lname']." ".$r['u_lname'];
         
       }
-      header('Location: index.php');
+      // header('Location: index.php');
   }
 
 
