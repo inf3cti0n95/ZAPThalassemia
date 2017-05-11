@@ -153,7 +153,7 @@
                     <article class='post-wrapper'>
 
                       <div class='thumb-wrapper'>
-                        <img src='$imageSrc' class='img-responsive' alt='' >
+                        <img style='min-height:200px; max-height:200px;' src='$imageSrc' class='img-responsive blue' alt='' >
 
                         <div class='entry-header'>
                           
@@ -171,7 +171,7 @@
                       </div><!-- .post-thumb -->
 
 
-                      <div class='entry-content'>
+                      <div  style='overflow: hidden;' class='entry-content'>
                         <p>$storyExerpt</p>
                       </div><!-- .entry-content -->
                       <div class='center'><a href='$storyUrl' class='waves-effect waves-light btn'>Read More</a></div>
