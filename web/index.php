@@ -14,15 +14,12 @@
     INNER JOIN user_table ON user_table.u_id=story_table.u_id_fk;");
 
     
-    $tips = mysqli_query($conn,"SELECT tip_table.tip_content,user.u_type_fk,user_table.u_avatar,user_table.u_fname,user_table.u_lname,user_table.u_id 
+    $tips = mysqli_query($conn,"SELECT tip_table.tip_content,user_table.u_type_fk,user_table.u_avatar,user_table.u_fname,user_table.u_lname,user_table.u_id 
     FROM tip_table
     INNER JOIN user_table ON user_table.u_id=tip_table.u_id_fk;");
 
     
-    $s = mysqli_fetch_assoc($stories);
-    $t = mysqli_fetch_assoc($tips);
-
-    print_r($t);
+   
 
 ?>
 
@@ -137,15 +134,20 @@
 
                 <?php 
                 
-                for($i=0;$i<6;$i++){
-                  
-                $imageSrc = "assets/img/blog/blog-5.jpg";
-                $title = "This is title";
-                $commentCount = 25;
-                $authorImage = "assets/img/blog/author.jpg";
-                $authorUrl = "#";
-                $storyUrl = "#";
-                $storyExerpt = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi ratione blanditiis, eaque tempore esse, soluta! Enim natus, recusandae, nobis reprehenderit dicta eaque quo soluta officiis in. Autem laboriosam, qui quos.";
+                while($row = mysqli_fetch_assoc($stories)){
+
+                  if($row["u_avatar"] == ""){
+                      $avatar = "assets/img/client-thumb/5.png";
+                  }else{
+                      $avatar = $row["u_avatar"];
+                  }
+    
+                $imageSrc = $row["st_heroimg"];
+                $title = $row["st_title"];
+                $authorImage = $avatar;
+                $authorUrl = "user.php?user=".$row["u_id"];
+                $storyUrl = "story.php?story=".$row["st_id"];
+                $storyExerpt = substr(strip_tags($row["st_content"]),30)."...";
 
                   echo "<div class='col-md-4'>
                     <article class='post-wrapper'>
@@ -164,9 +166,7 @@
                           <a href='$authorUrl'><img src='$authorImage' alt=''></a>                
                         </div>
 
-                        <span class='post-comments-number'>
-                          <i class='fa fa-comments'></i><a href='$storyUrl#comments'>$commentCount</a>
-                        </span>
+                        
 
                       </div><!-- .post-thumb -->
 
