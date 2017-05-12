@@ -24,6 +24,9 @@
     $path = addslashes (realpath("a.csv"));
     echo $path;
 
+    chmod($filename,0777);
+
+
     if(mysqli_query($conn,"LOAD DATA INFILE '$path'
      INTO TABLE med_data
      FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"'
