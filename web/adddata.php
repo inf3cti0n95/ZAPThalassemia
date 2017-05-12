@@ -32,7 +32,7 @@
         </div>
         </div>
         <input type="hidden" name="user" value="<?php echo $userid;?>">
-                    <button type="submit"  class="btn btn-lg blue mt-20 waves-effect waves-light mr-20">Publish Story</button>
+                    <button type="submit"  class="btn btn-lg blue mt-20 waves-effect waves-light mr-20">Add Data</button>
 
            </form>
             </div>
