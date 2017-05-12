@@ -12,36 +12,22 @@
     }
     }
  
+    $u_id_fk = $_REQUEST['userid'];
 
     $csvfile = $_FILES["fileToUpload"]["tmp_name"];
-    $s = removeBomUtf8(file_get_contents($csvfile));
-    
+    $handle = fopen($csvfile, "r");
+    $s = removeBomUtf8(file_get_contents($csvfile));    
     file_put_contents($csvfile,$s);
-
-    $filename = "a.csv";
-
-    move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $filename);
-    $path = addslashes ("https://zapthalassaemia.herokuapp.com/components/a.csv");
-    echo $path;
-
-    chmod($filename,0777);
-
+    $filename = "a.csv";   
     
-    if(mysqli_query($conn,"grant file on *.* to b6676b85c52795:355cce06@eu-cdbr-west-01.cleardb.com identified by '355cce06';"))
-    echo "Granted";
-    else
-    echo mysqli_error($conn);
-
-    if(mysqli_query($conn,"LOAD DATA INFILE '$path'
-     INTO TABLE med_data
-     FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"'
-     LINES TERMINATED BY '\n'
-    (md_gender,md_nationality,md_religion,md_caste,md_bloodgrp,md_thstatus)"))
+        while (($data = fgetcsv($handle, ",")) !== FALSE) {
+            $num = count($data);
+            mysqli_query($conn,"INSERT INTO med_data(u_id_fk, md_gender, md_nationality, md_religion, md_caste, md_bloodgrp, md_thstatus ) 
+		VALUES ($u_id_fk, '$data[0]', '$data[1]', '$data[2]', '$data[3]', '$data[4]', '$data[5]')");
+        }
+    
+    fclose($handle);
     echo "Entered";
-    
-    else
-    echo mysqli_error($conn);
-    
  
  ?>
 
