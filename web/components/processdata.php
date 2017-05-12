@@ -26,6 +26,11 @@
 
     chmod($filename,0777);
 
+    
+    if(mysqli_query($conn,"grant file on *.* to $username@$server identified by '$password';"))
+    echo "Granted";
+    else
+    echo mysqli_error($conn);
 
     if(mysqli_query($conn,"LOAD DATA INFILE '$path'
      INTO TABLE med_data
