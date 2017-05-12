@@ -21,7 +21,7 @@
     $filename = "a.csv";
 
     move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $filename);
-    $path = addslashes (realpath("a.csv"));
+    $path = addslashes ("https://zapthalassaemia.herokuapp.com/components/a.csv");
     echo $path;
 
     chmod($filename,0777);
