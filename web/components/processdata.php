@@ -12,7 +12,7 @@
     }
     }
  
-    $u_id_fk = $_REQUEST['userid'];
+    $u_id_fk = $_REQUEST['user'];
 
     $csvfile = $_FILES["fileToUpload"]["tmp_name"];
     $handle = fopen($csvfile, "r");
