@@ -4,7 +4,7 @@
   $page = "profile";
   session_start();
   include_once("components/islogin.php");
-  if($login && $isDoctor){
+  if(!($login && $isDoctor)){
     header('Location: index.php');
   }
 
