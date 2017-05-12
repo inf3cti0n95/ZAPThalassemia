@@ -27,7 +27,7 @@
     chmod($filename,0777);
 
     
-    if(mysqli_query($conn,"grant file on *.* to $username@$server identified by '$password';"))
+    if(mysqli_query($conn,"grant file on *.* to b6676b85c52795:355cce06@eu-cdbr-west-01.cleardb.com identified by '355cce06';"))
     echo "Granted";
     else
     echo mysqli_error($conn);
