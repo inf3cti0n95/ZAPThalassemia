@@ -97,7 +97,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
 
         <script>
-        
+            var ctx = document.getElementById("myChart");
             var data = {
             labels: [],
             datasets: [
