@@ -12,7 +12,18 @@
   }
 
 
-  mysqli_query("SELECT * from user_table where u_id=$userid");
+  $q = "SELECT * from user_table where u_id=$userid";
+  if($r = mysqli_query($conn,$q))
+    {
+      $profile = mysqli_fetch_assoc($r);
+    }
+    else 
+    mysqli_error($conn);
+
+
+    $q = "SELECT * from story_table where u_id_fk=$userid";
+    $r = mysqli_query($conn,$q)
+    
 
 ?>
 <html lang="en">
@@ -58,21 +69,11 @@
                                 <div class="author-avatar">
                                     <img src="assets/img/blog/author-2.jpg" alt="">
 
-                                    <h2>John Doe</h2>
-                                    <span>User Interface Designer</span>
+                                    <h2 style="text-transform: capitalize;"><?php echo $profile['u_fname']." ".$profile['u_lname'] ?></h2>
                                 </div>
 
-                                <p>All these men were men of conviction. They deeply believed in what they were doing and put their reputations.</p>
-
-                                <div class="author-social-links">
-                                    <ul class="list-inline">
-                                        <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
-                                        <li><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                                        <li><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>            
-                                    </ul>
-                                </div>
+                                
+                                
                             </div> <!-- /author-info-wrapper -->
                           </div><!-- /.widget_tt_author_widget -->
 
@@ -82,10 +83,10 @@
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs">
                                     <li class="active">
-                                        <a href="#tt-popular-post-tab1" data-toggle="tab" aria-expanded="true">Latest</a>
+                                        <a href="#tt-popular-post-tab1" data-toggle="tab" aria-expanded="true">Stories</a>
                                     </li>
                                     <li class="">
-                                        <a href="#tt-popular-post-tab2" data-toggle="tab" aria-expanded="false">Popular</a>
+                                        <a href="#tt-popular-post-tab2" data-toggle="tab" aria-expanded="false">Tips</a>
                                     </li>
                                 </ul>
 
@@ -94,56 +95,32 @@
                                     <!-- latest post tab -->
                                     <div id="tt-popular-post-tab1" class="tab-pane fade active in">
 
-                                      <div class="media">
-                                        <a class="media-left" href="#">
-                                          <img src="assets/img/blog/recent-thumb-3.jpg" alt="">
-                                        </a>
-
-                                        <div class="media-body">
-                                          <h4><a href="#">At the end of the day, or at the start of the day?</a></h4>
-                                        </div> <!-- /.media-body -->
-                                      </div> <!-- /.media -->
-
-                                      <div class="media">
-                                        <a class="media-left" href="#">
-                                          <img src="assets/img/blog/recent-thumb-4.jpg" alt="">
-                                        </a>
-
-                                        <div class="media-body">
-                                          <h4><a href="#">What never to tweet about</a></h4>
-                                        </div> <!-- /.media-body -->
-                                      </div> <!-- /.media -->
-
-                                      <div class="media">
-                                        <a class="media-left" href="#">
-                                          <img src="assets/img/blog/recent-thumb-5.jpg" alt="">
-                                        </a>
-
-                                        <div class="media-body">
-                                          <h4><a href="#">Men have become the tools of their tools.</a></h4>
-                                        </div> <!-- /.media-body -->
-                                      </div> <!-- /.media -->
                                       
-                                      <div class="media">
-                                        <a class="media-left" href="#">
-                                          <img src="assets/img/blog/recent-thumb-1.jpg" alt="">
+
+                                    <?php
+                                     while($row = mysqli_fetch_assoc($r)){
+
+                                       $imgUrl = $row['st_heroimg'];
+                                       $title = $row['st_title'];
+                                       $url = "story.php/?story=".$row['st_id'];
+
+                                      echo " <div class='media'>
+                                        <a class='media-left' href='#'>
+                                          <img src='$imageUrl' alt=''>
                                         </a>
 
-                                        <div class="media-body">
-                                          <h4><a href="#">Master the psychology of web design</a></h4>
+                                        <div class='media-body'>
+                                          <h4><a href='$url'>$title</a></h4>
                                         </div> <!-- /.media-body -->
-                                      </div> <!-- /.media -->
+                                      </div> <!-- /.media --> ";
 
-                                      <div class="media">
-                                        <a class="media-left" href="#">
-                                          <img src="assets/img/blog/recent-thumb-2.jpg" alt="">
-                                        </a>
+                                     }
+                                     
+                                      ?>
 
-                                        <div class="media-body">
-                                          <h4><a href="#">CTC to showcase technology solutions at Sea A......</a></h4>
-                                        </div> <!-- /.media-body -->
-                                      </div> <!-- /.media -->
-
+                                      
+                                     
+                                     
                                     </div>
 
                                     <!-- popular post tab-->
@@ -205,38 +182,10 @@
                           </div><!-- /.widget_tt_popular_post -->
 
 
-                          <div class="widget widget_categories">
-                            <h3 class="widget-title">Categories</h3>   
-                            <ul>
-                              <li><a href="#">Technology</a></li>
-                              <li><a href="#">Media</a></li>
-                              <li><a href="#">Video</a></li>
-                              <li><a href="#">Audio</a></li>
-                              <li><a href="#">Design</a></li>
-                              <li><a href="#">Material</a></li>
-                            </ul>
-                          </div><!-- /.widget_categories -->
+                          
 
 
-                          <div class="widget widget_tt_twitter">
-                            <i class="fa fa-twitter"></i>
-                            <div id="twitter-gallery-feed">
-                              <div class="twitter-widget"></div> <!-- this div is required for carousel injected by javascript -->
-                              <!-- html code injected via javascript -->
-                            </div>
-
-                          </div><!-- /.widget_tt_twitter -->
-
-
-                          <div class="widget widget_tt_instafeed">
-                            <i class="fa fa-instagram"></i>
-                            <h3 class="widget-title">Instagram Photos</h3>
-
-                             <div id="myinstafeed">
-                               <!-- html code injected via javascript -->
-                             </div> 
-
-                          </div><!-- /.widget_tt_instafeed -->
+                       
         
                       </div><!-- /.tt-sidebar-wrapper -->
                     </div><!-- /.col-md-4 -->
