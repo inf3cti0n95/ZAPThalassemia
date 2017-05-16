@@ -37,7 +37,8 @@
             <div class="container">
                 <div class="row">
 
-                    <form action="" id="axisform">
+                    <div class="col-md-4">
+                                            <form action="" id="axisform">
                     
 
 
@@ -71,7 +72,14 @@
                     <button type="submit"  class="btn btn-lg blue mt-20 waves-effect waves-light mr-20">Submit</button>
                     
                     </form>
+
+                    </div>                    
+                    <div class="col-md-8">
                     
+                        <canvas id="myChart" width="400" height="400"></canvas>
+
+                    
+                    </div>                    
 
 
                 </div>
@@ -85,9 +93,37 @@
 
 
         <?php include_once("components/scripts.php") ?>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
 
         <script>
         
+            var data = {
+            labels: [],
+            datasets: [
+                {
+                    label: "My First dataset",
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1,
+                    data: [],
+                }
+            ]
+        };
         
             $('#axisform').submit(function(e){
 
@@ -98,13 +134,20 @@
                     request.open("POST", "/components/getreportdata.php");
                     request.send(formData);
                     request.addEventListener("load", reqListener);
+
+                    
  
                     function reqListener () {
-                        console.log(this.responseText);
+                        let req = JSON.parse(this.responseText);
+                        data.label = req.label;
+                        data.datasets.data = req.data;
+                        var myBarChart = new Chart(ctx, {
+                            type: 'bar',
+                            data: data
+                        });
                     }
 
-            });
-        
+            });       
         
         </script>
     </body>
