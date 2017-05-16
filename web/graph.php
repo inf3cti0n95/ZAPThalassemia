@@ -135,12 +135,13 @@
                     request.send(formData);
                     request.addEventListener("load", reqListener);
 
-                    
+
  
                     function reqListener () {
                         let req = JSON.parse(this.responseText);
                         data.label = req.label;
                         data.datasets.data = req.data;
+                        console.log(data)
                         var myBarChart = new Chart(ctx, {
                             type: 'bar',
                             data: data
