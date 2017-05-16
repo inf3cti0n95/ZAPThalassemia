@@ -21,7 +21,7 @@
         while (($data = fgetcsv($handle, ",")) !== FALSE) {
             $num = count($data);
             if(mysqli_query($conn,"INSERT INTO med_data(u_id_fk, md_gender, md_nationality, md_religion, md_bloodgrp, md_thstatus ) 
-		VALUES ($u_id_fk, '$data[0]', '$data[1]', '$data[2]',  '$data[4]', '$data[5]')"))
+		VALUES ($u_id_fk, '$data[0]', '$data[1]', '$data[2]',  '$data[3]', '$data[4]')"))
         echo "";
         else 
         mysqli_error($conn);
