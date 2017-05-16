@@ -42,29 +42,29 @@
 
 
                     <p>
-                    <input class="with-gap" name="xaxis" value="md_religion" type="radio" id="gmale" />
-                    <label for="gmale" style="font-size: 16px; font-weight: 400;">Religion</label>
+                    <input class="with-gap" name="xaxis" value="md_religion" type="radio" id="rel" />
+                    <label for="rel" style="font-size: 16px; font-weight: 400;">Religion</label>
                     </p>
                     <p>
-                    <input class="with-gap" name="xaxis" value="md_gender" type="radio" id="gfmale" />
-                    <label for="gfmale" style="font-size: 16px; font-weight: 400;">Gender</label>
+                    <input class="with-gap" name="xaxis" value="md_gender" type="radio" id="gen" />
+                    <label for="gen" style="font-size: 16px; font-weight: 400;">Gender</label>
                     </p>
                     <p>
-                    <input class="with-gap" name="xaxis" value="md_bloodgrp" type="radio" id="gfmale" />
-                    <label for="gfmale" style="font-size: 16px; font-weight: 400;">BloodGroup</label>
+                    <input class="with-gap" name="xaxis" value="md_bloodgrp" type="radio" id="bg" />
+                    <label for="bg" style="font-size: 16px; font-weight: 400;">BloodGroup</label>
                     </p>
 
                     <p>
-                    <input class="with-gap" name="yaxis" value="major" type="radio" id="gmale" />
-                    <label for="gmale" style="font-size: 16px; font-weight: 400;">Majot</label>
+                    <input class="with-gap" name="yaxis" value="major" type="radio" id="major" />
+                    <label for="major" style="font-size: 16px; font-weight: 400;">Major</label>
                     </p>
                     <p>
-                    <input class="with-gap" name="yaxis" value="minor" type="radio" id="gfmale" />
-                    <label for="gfmale" style="font-size: 16px; font-weight: 400;">Minor</label>
+                    <input class="with-gap" name="yaxis" value="minor" type="radio" id="minor" />
+                    <label for="minor" style="font-size: 16px; font-weight: 400;">Minor</label>
                     </p>
                     <p>
-                    <input class="with-gap" name="yaxis" value="normal" type="radio" id="gfmale" />
-                    <label for="gfmale" style="font-size: 16px; font-weight: 400;">Normal</label>
+                    <input class="with-gap" name="yaxis" value="normal" type="radio" id="normal" />
+                    <label for="normal" style="font-size: 16px; font-weight: 400;">Normal</label>
                     </p>
 
 
