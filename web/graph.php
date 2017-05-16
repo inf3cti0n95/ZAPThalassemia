@@ -41,6 +41,7 @@
                                             <form action="" id="axisform">
                     
 
+                                            <h2>Parameter 1</h2>
 
                     <p>
                     <input class="with-gap" name="xaxis" value="md_religion" type="radio" id="rel" />
@@ -54,6 +55,8 @@
                     <input class="with-gap" name="xaxis" value="md_bloodgrp" type="radio" id="bg" />
                     <label for="bg" style="font-size: 16px; font-weight: 400;">BloodGroup</label>
                     </p>
+                                                                <h2>Parameter 2</h2>
+
 
                     <p>
                     <input class="with-gap" name="yaxis" value="major" type="radio" id="major" />
@@ -102,7 +105,7 @@
             labels: [],
             datasets: [
                 {
-                    label: "My First dataset",
+                    label: "Report",
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
@@ -134,7 +137,10 @@
                     request.open("POST", "/components/getreportdata.php");
                     request.send(formData);
                     request.addEventListener("load", reqListener);
-
+                    var myBarChart = new Chart(ctx, {
+                            type: 'bar',
+                            data: data
+                        });
 
  
                     function reqListener () {
@@ -148,10 +154,9 @@
 
                         data.datasets[0].data = req.data;
                         console.log(data)
-                        var myBarChart = new Chart(ctx, {
-                            type: 'bar',
-                            data: data
-                        });
+
+                        myBarChart.update();
+                        
                     }
 
             });       
