@@ -92,9 +92,16 @@
             $('#axisform').submit(function(e){
 
                     e.preventDefault();
-
-                    console.log(e)
-
+                    let formData = new FormData(this)
+                    console.log()
+                    var request = new XMLHttpRequest();
+                    request.open("POST", "/components/getreportdata.php");
+                    request.send(formData);
+                    request.addEventListener("load", reqListener);
+ 
+                    function reqListener () {
+                        console.log(this.responseText);
+                    }
 
             });
         
