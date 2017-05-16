@@ -146,7 +146,7 @@
                         })
 
 
-                        data.datasets.data = req.data;
+                        data.datasets[0].data = req.data;
                         console.log(data)
                         var myBarChart = new Chart(ctx, {
                             type: 'bar',
