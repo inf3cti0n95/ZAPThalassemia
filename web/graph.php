@@ -140,6 +140,12 @@
                     function reqListener () {
                         let req = JSON.parse(this.responseText);
                         data.labels = req.label;
+
+                        req.data = req.data.map((d)=>{
+                            return eval(d);
+                        })
+
+
                         data.datasets.data = req.data;
                         console.log(data)
                         var myBarChart = new Chart(ctx, {
