@@ -139,7 +139,7 @@
  
                     function reqListener () {
                         let req = JSON.parse(this.responseText);
-                        data.label = req.label;
+                        data.labels = req.label;
                         data.datasets.data = req.data;
                         console.log(data)
                         var myBarChart = new Chart(ctx, {
