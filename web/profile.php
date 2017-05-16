@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+    include_once("components/connection.php");
+ ?>
 <?php 
   
   $page = "profile";
@@ -7,6 +10,9 @@
   if(!$login){
     header('Location: login.php');
   }
+
+
+  mysqli_query("SELECT * from user_table where u_id=$userid");
 
 ?>
 <html lang="en">
