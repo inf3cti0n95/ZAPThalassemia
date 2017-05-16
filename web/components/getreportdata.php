@@ -8,7 +8,7 @@
     $x  = $_REQUEST["xaxis"];
     $y = $_REQUEST["yaxis"];
 
-    $q = "SELECT count(md_id) AS COUNT, $x from med_data where md_thstatus=$y group by $x";
+    $q = "SELECT count(md_id) AS COUNT, $x from med_data where md_thstatus='$y' group by $x";
     echo $q;
     
 
