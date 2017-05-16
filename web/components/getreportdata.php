@@ -10,13 +10,15 @@
 
     $q = "SELECT count(md_id) AS COUNT, $x from med_data where md_thstatus='$y' group by $x";
     echo $q;
-    
+
+    $echo["label"] = array();    
+    $echo["data"] = array();    
 
     if($r = mysqli_query($conn,$q))
     {
         while($row = mysqli_fetch_assoc($r)){
-            $echo["label"] = $row[$x];
-            $echo["data"] = $row["COUNT"];
+            array_push($echo["label"],$row[$x]);
+            array_push($echo["data"],$row["COUNT"]);
         }
 
         echo json_encode($echo);
