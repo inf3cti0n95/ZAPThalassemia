@@ -23,6 +23,10 @@
 
     $q = "SELECT * from story_table where u_id_fk=$userid";
     $r = mysqli_query($conn,$q)
+
+
+    $q = "SELECT * from tip_table where u_id_fk=$userid";
+    $tips = mysqli_query($conn,$q)
     
 
 ?>
@@ -126,55 +130,24 @@
                                     <!-- popular post tab-->
                                     <div id="tt-popular-post-tab2" class="tab-pane fade">
 
-                                      <div class="media">
-                                        <a class="media-left" href="#">
-                                          <img src="assets/img/blog/recent-thumb-1.jpg" alt="">
-                                        </a>
+                                      
+                                    <?php
+                                     while($row = mysqli_fetch_assoc($tips)){
 
-                                        <div class="media-body">
-                                          <h4><a href="#">Master the psychology of web design</a></h4>
+                                       $tip_content = $row['tip_content'];
+                                       
+
+                                      echo " <div class='media'>
+                                        
+
+                                        <div class='media-body'>
+                                          <h4><a href='$url'>$tip_content</a></h4>
                                         </div> <!-- /.media-body -->
-                                      </div> <!-- /.media -->
+                                      </div> <!-- /.media --> ";
 
-                                      <div class="media">
-                                        <a class="media-left" href="#">
-                                          <img src="assets/img/blog/recent-thumb-2.jpg" alt="">
-                                        </a>
-
-                                        <div class="media-body">
-                                          <h4><a href="#">CTC to showcase technology solutions at Sea A......</a></h4>
-                                        </div> <!-- /.media-body -->
-                                      </div> <!-- /.media -->
-
-                                      <div class="media">
-                                        <a class="media-left" href="#">
-                                          <img src="assets/img/blog/recent-thumb-3.jpg" alt="">
-                                        </a>
-
-                                        <div class="media-body">
-                                          <h4><a href="#">At the end of the day, or at the start of the day?</a></h4>
-                                        </div> <!-- /.media-body -->
-                                      </div> <!-- /.media -->
-
-                                      <div class="media">
-                                        <a class="media-left" href="#">
-                                          <img src="assets/img/blog/recent-thumb-4.jpg" alt="">
-                                        </a>
-
-                                        <div class="media-body">
-                                          <h4><a href="#">What never to tweet about</a></h4>
-                                        </div> <!-- /.media-body -->
-                                      </div> <!-- /.media -->
-
-                                      <div class="media">
-                                        <a class="media-left" href="#">
-                                          <img src="assets/img/blog/recent-thumb-5.jpg" alt="">
-                                        </a>
-
-                                        <div class="media-body">
-                                          <h4><a href="#">Men have become the tools of their tools.</a></h4>
-                                        </div> <!-- /.media-body -->
-                                      </div> <!-- /.media -->
+                                     }
+                                     
+                                      ?>
 
                                     </div>
                                 </div><!-- /.tab-content -->
