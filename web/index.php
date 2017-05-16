@@ -41,8 +41,8 @@
                         <h1 class="intro-title text-uppercase mb-50">Zap Thalassaemia</h1>
                         <p class="text-medium" style="color: black">We combine digital craftsmanship with innovative thinking to help eradicate Thalassemia.</p>
 
-                        <a href="#" class="btn btn-lg blue mt-20 waves-effect waves-light mr-20">Research</a>
-                        <a href="#" class="btn btn-lg black mt-20 waves-effect waves-light">Stories</a>
+                        <a href="graph.php" class="btn btn-lg blue mt-20 waves-effect waves-light mr-20">Reports</a>
+                        <a href="stories.php" class="btn btn-lg black mt-20 waves-effect waves-light">Stories</a>
                     </div><!-- row -->
                 </div><!-- row -->
               </div><!-- /.container -->

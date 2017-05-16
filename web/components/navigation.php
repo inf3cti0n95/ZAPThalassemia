@@ -38,6 +38,7 @@
                         <ul class="menuzord-menu pull-right">
                             <li class="<?php if($page == "home")echo "active"; ?>"><a href="index.php">Home</a></li>
                             <li class="<?php if($page == "story")echo "active"; ?>" ><a href="stories.php">Stories</a></li>
+                            <li class="<?php if($page == "report")echo "active"; ?>" ><a href="graph.php">Reports</a></li>
 
 
                             <?php 

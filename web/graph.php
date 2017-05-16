@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php 
   
-  $page = "Research";
+  $page = "report";
   session_start();
   include_once("components/islogin.php");
 //   if(!$login){
@@ -24,7 +24,7 @@
                         <h2>Profile</h2>
                         <ol class="breadcrumb">
                             <li><a href="index.php">Home</a></li>
-                            <li class="active"><a href="">Profile</a></li>
+                            <li class="active"><a href="">Reports</a></li>
                         </ol>
                     </div>
                 </div>
@@ -39,15 +39,33 @@
 
                     <form action="" id="axisform">
                     
-                    <input type="radio" name="xaxis" value="md_religion"/> Religion
-                    <input type="radio" name="xaxis" value="caste"/> Caste
-                    <input type="radio" name="xaxis" value="md_gender"/> Gender
-                    <input type="radio" name="xaxis" value="md_bloodgrp"/> BloodGroup
 
 
-                    <input type="radio" name="yaxis" value="major"/> Major
-                    <input type="radio" name="yaxis" value="minor"/> Minor
-                    <input type="radio" name="yaxis" value="normal"/> Normal
+                    <p>
+                    <input class="with-gap" name="xaxis" value="md_religion" type="radio" id="gmale" />
+                    <label for="gmale" style="font-size: 16px; font-weight: 400;">Religion</label>
+                    </p>
+                    <p>
+                    <input class="with-gap" name="xaxis" value="md_gender" type="radio" id="gfmale" />
+                    <label for="gfmale" style="font-size: 16px; font-weight: 400;">Gender</label>
+                    </p>
+                    <p>
+                    <input class="with-gap" name="xaxis" value="md_bloodgrp" type="radio" id="gfmale" />
+                    <label for="gfmale" style="font-size: 16px; font-weight: 400;">BloodGroup</label>
+                    </p>
+
+                    <p>
+                    <input class="with-gap" name="yaxis" value="major" type="radio" id="gmale" />
+                    <label for="gmale" style="font-size: 16px; font-weight: 400;">Majot</label>
+                    </p>
+                    <p>
+                    <input class="with-gap" name="yaxis" value="minor" type="radio" id="gfmale" />
+                    <label for="gfmale" style="font-size: 16px; font-weight: 400;">Minor</label>
+                    </p>
+                    <p>
+                    <input class="with-gap" name="yaxis" value="normal" type="radio" id="gfmale" />
+                    <label for="gfmale" style="font-size: 16px; font-weight: 400;">Normal</label>
+                    </p>
 
 
                     <button type="submit"  class="btn btn-lg blue mt-20 waves-effect waves-light mr-20">Submit</button>
