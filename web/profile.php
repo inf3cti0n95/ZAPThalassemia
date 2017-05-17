@@ -22,7 +22,7 @@
 
 
     $q = "SELECT * from story_table where u_id_fk=$userid";
-    $r = mysqli_query($conn,$q)
+    $r = mysqli_query($conn,$q);
 
 
     $q = "SELECT * from tip_table where u_id_fk=$userid";
