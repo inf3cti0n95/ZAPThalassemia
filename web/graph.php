@@ -134,16 +134,16 @@
                 data: data
             });
 
-            let i=true;
+            // let i=true;
         
             $('#axisform').submit(function(e){
 
                     
                     e.preventDefault();
-                    if(i){
-                        this.submit();
-                        i=false;
-                    }
+                    // if(i){
+                    //     this.submit();
+                    //     i=false;
+                    // }
                     let formData = new FormData(this)
                     console.log()
                     var request = new XMLHttpRequest();
