@@ -60,7 +60,7 @@
                    
                     <input type="hidden" name="user" id="uid" value="<?php echo $userid?>">
 
-                    <textarea name="content" id="froala-editor">Initialize the Froala WYSIWYG HTML Editor on a textarea.</textarea>
+                    <textarea name="content" id="froala-editor"></textarea>
                     <button type="submit"  class="btn btn-lg blue mt-20 waves-effect waves-light mr-20">Publish Tip</button>
 
             </form>
