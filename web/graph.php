@@ -128,6 +128,11 @@
                 }
             ]
         };
+
+        var myBarChart = new Chart(ctx, {
+                type: 'bar',
+                data: data
+            });
         
             $('#axisform').submit(function(e){
 
@@ -166,7 +171,7 @@
             $('#grapharea').append('<canvas id="myChart" width="400" height="400"></canvas>');
             canvas = document.querySelector('#myChart'); // why use jQuery?
             ctx = canvas.getContext('2d');
-             var myBarChart = new Chart(ctx, {
+             myBarChart = new Chart(ctx, {
                 type: 'bar',
                 data: data
             });
