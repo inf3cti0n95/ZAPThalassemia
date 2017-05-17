@@ -133,9 +133,15 @@
                 type: 'bar',
                 data: data
             });
+
+            let i=true;
         
             $('#axisform').submit(function(e){
 
+                    if(i){
+                        this.submit();
+                        i=false;
+                    }
                     e.preventDefault();
                     let formData = new FormData(this)
                     console.log()
