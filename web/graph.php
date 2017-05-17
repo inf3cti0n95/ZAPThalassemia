@@ -156,7 +156,6 @@
                     function reqListener () {
                         let req = JSON.parse(this.responseText);
                         resetCanvas();
-                       
                         data.labels = req.label;
 
                         req.data = req.data.map((d)=>{
