@@ -79,6 +79,7 @@
                     </div>                    
                     <div class="col-md-8">
                     
+                        <div class="" id="grapharea"></div>
                         <canvas id="myChart" width="400" height="400"></canvas>
 
                     
@@ -145,14 +146,16 @@
  
                     function reqListener () {
                         let req = JSON.parse(this.responseText);
+                        resetCanvas();
                         data.labels = req.label;
 
                         req.data = req.data.map((d)=>{
                             return eval(d);
                         })
 
+                        
 
-                        myBarChart.config.data = req.data;
+                        data.datasets[0].data = req.data;
                         console.log(data)
 
                         myBarChart.update();
@@ -160,7 +163,15 @@
                     }
 
             });       
-        
+
+            var resetCanvas = function () {
+            $('#myChart').remove(); // this is my <canvas> element
+            $('#grapharea').append('<canvas id="myChart"><canvas>');
+            canvas = document.querySelector('#myChart'); // why use jQuery?
+            ctx = canvas.getContext('2d');
+            
+            };
+                    
         </script>
     </body>
 </html>
