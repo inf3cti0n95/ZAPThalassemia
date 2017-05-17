@@ -152,7 +152,7 @@
                         })
 
 
-                        data.datasets[0].data = req.data;
+                        myBarChart.config.data = req.data;
                         console.log(data)
 
                         myBarChart.update();
