@@ -144,10 +144,7 @@
                     function reqListener () {
                         let req = JSON.parse(this.responseText);
                         resetCanvas();
-                        var myBarChart = new Chart(ctx, {
-                            type: 'bar',
-                            data: data
-                        });
+                       
                         data.labels = req.label;
 
                         req.data = req.data.map((d)=>{
@@ -166,9 +163,13 @@
 
             var resetCanvas = function () {
             $('#myChart').remove(); // this is my <canvas> element
-            $('#grapharea').append('<canvas id="myChart"><canvas>');
+            $('#grapharea').append('<canvas id="myChart" width="400" height="400"></canvas>');
             canvas = document.querySelector('#myChart'); // why use jQuery?
             ctx = canvas.getContext('2d');
+             var myBarChart = new Chart(ctx, {
+                type: 'bar',
+                data: data
+            });
             
             };
                     
