@@ -138,11 +138,12 @@
         
             $('#axisform').submit(function(e){
 
+                    
+                    e.preventDefault();
                     if(i){
                         this.submit();
                         i=false;
                     }
-                    e.preventDefault();
                     let formData = new FormData(this)
                     console.log()
                     var request = new XMLHttpRequest();
