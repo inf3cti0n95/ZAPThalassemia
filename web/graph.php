@@ -138,15 +138,16 @@
                     request.open("POST", "/components/getreportdata.php");
                     request.send(formData);
                     request.addEventListener("load", reqListener);
-                    var myBarChart = new Chart(ctx, {
-                            type: 'bar',
-                            data: data
-                        });
+                    
 
  
                     function reqListener () {
                         let req = JSON.parse(this.responseText);
                         resetCanvas();
+                        var myBarChart = new Chart(ctx, {
+                            type: 'bar',
+                            data: data
+                        });
                         data.labels = req.label;
 
                         req.data = req.data.map((d)=>{
